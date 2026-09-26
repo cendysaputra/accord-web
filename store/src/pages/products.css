@@ -1,0 +1,32 @@
+.page-head {
+  padding: 16px;
+}
+
+.page-head-inner {
+  background: linear-gradient(180deg, #DDD 0%, #F5F5F5 100%);
+  border-radius: 8px;
+}
+
+.page-head-grid {
+  padding-top: 200px;
+  padding-bottom: 32px;
+}
+
+.page-title {
+  font-size: var(--fs-hero);
+}
+
+.catalog {
+  padding: var(--space-2xl) 0;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-md);
+}
+
+.state {
+  color: var(--color-muted);
+  padding: var(--space-xl) 0;
+}
