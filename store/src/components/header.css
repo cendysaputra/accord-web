@@ -1,29 +1,30 @@
 .header {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   padding: 12px 20px;
-   border-bottom: 1px solid #eee;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  background: transparent;
 }
 
 .logo {
-   font-size: 32px;
-   letter-spacing: -4%;
-}
-
-.logo .dot {
-  color: var(--color-accent);
+  font-size: var(--fs-logo);
+  letter-spacing: -0.04em;
 }
 
 .nav {
   display: flex;
-  flex-direction: row;
   gap: var(--space-md);
 }
 
 .nav a {
   position: relative;
-  color: black;
+  color: var(--color-text);
 }
 
 .nav a::after {

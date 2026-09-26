@@ -1,0 +1,31 @@
+.hero {
+   padding: 16px;
+}
+
+.hero-inner {
+   background: linear-gradient(180deg, #DDD 0%, #F5F5F5 100%);
+   border-radius: 8px;
+}
+
+.hero-grid {
+   padding-top: 120px;
+   padding-bottom: 32px;
+   display: flex;
+}
+
+.hero-text {
+   display: flex;
+   flex-direction: column;
+   gap: var(--space-2xl);
+}
+
+.hero-bottom {
+   display: flex;
+   flex-direction: column;
+   gap: var(--space-md);
+   width: 25%;
+}
+
+.hero-title {
+   width: 60%;
+}

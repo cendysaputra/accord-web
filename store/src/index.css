@@ -89,6 +89,10 @@ h1, h2, h3 {
   letter-spacing: -0.03em;
 }
 
+h1 {
+   font-size: var(--fs-hero);
+}
+
 p {
   margin: 0;
 }
@@ -113,10 +117,52 @@ button {
   cursor: pointer;
 }
 
+
+
 /* Container */
 .container {
   width: 100%;
   max-width: var(--container);
   margin: 0 auto;
   padding: 0 var(--gutter);
+}
+
+
+/* Dot oranye */
+.dot {
+  color: var(--color-accent);
+}
+
+
+
+/* Button Line */
+.btn-line a {
+   position: relative;
+	overflow: hidden;
+	padding: 0 0 0.2em 0 !important;
+	background: none;
+	border-radius: 0 !important;
+	border-bottom: 0;
+	color: var(--ast-global-color-0);
+	fill: var(--ast-global-color-0);
+}
+
+.btn-line a::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 1px;
+	background: currentColor;
+}
+
+.btn-line a:hover {
+	background: none;
+	color: var(--ast-global-color-0);
+	fill: var(--ast-global-color-0);
+}
+
+.btn-line a:hover::after {
+	animation: btn-line-slide 0.6s cubic-bezier(0.65, 0, 0.35, 1);
 }
