@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Soundcore P20i",
+    "price": 349000,
+    "image": "/images/prod01.jpg",
+    "description": "True wireless in-ear. Anker's entry level pair with long battery life and a case small enough for a trouser pocket. Sound profile can be adjusted from the companion app, and the fit stays secure during light movement.",
+    "stock": 26
+  },
+  {
+    "name": "JBL Wave Beam",
+    "price": 599000,
+    "image": "/images/prod02.jpg",
+    "description": "True wireless in-ear, water resistant. Built around the thick low end JBL is known for, with splash resistance that makes it safe for light workouts. Charging case supports both cable and wireless charging.",
+    "stock": 0
+  },
+  {
+    "name": "HyperX Cloud Stinger 2",
+    "price": 649000,
+    "image": "/images/prod03.jpg",
+    "description": "Wired gaming headset. The microphone mutes on its own when flipped up, so there is no switch to hunt for mid game. Light frame with an adjustable headband that holds up over long sessions.",
+    "stock": 18
+  },
+  {
+    "name": "Sony WH-CH520",
+    "price": 749000,
+    "image": "/images/prod04.jpg",
+    "description": "Wireless on-ear. A light pair with the controls sitting on the right cup and a fold flat hinge for travel. Battery runs long enough that most people charge it once a week.",
+    "stock": 24
+  },
+  {
+    "name": "Audio-Technica ATH-M20x",
+    "price": 949000,
+    "image": "/images/prod05.jpg",
+    "description": "Wired studio monitor, closed-back. Tuned flat rather than flattering, which is what makes it useful for recording and critical listening. Simple build with a fixed cable and no wireless features to worry about.",
+    "stock": 17
+  },
+  {
+    "name": "Soundcore Life Q30",
+    "price": 1250000,
+    "image": "/images/prod06.jpg",
+    "description": "Wireless over-ear, noise cancelling. Active noise cancelling with several modes and a battery that outlasts most long haul flights. Widely regarded as one of the strongest value picks in its price bracket.",
+    "stock": 19
+  },
+  {
+    "name": "Sony WH-CH720N",
+    "price": 1899000,
+    "image": "/images/prod07.jpg",
+    "description": "Wireless over-ear, noise cancelling. Light enough to forget you are wearing it, with noise cancelling that takes the edge off traffic and cabin noise. Pairs quickly and switches between two devices.",
+    "stock": 10
+  },
+  {
+    "name": "Audio-Technica ATH-M50x",
+    "price": 2499000,
+    "image": "/images/prod08.jpg",
+    "description": "Wired studio monitor, closed-back. A fixture in small studios for years, with swivelling cups for single ear monitoring and detachable cables in three lengths. Firm clamp that loosens after a few weeks of use.",
+    "stock": 6
+  },
+  {
+    "name": "Sony WH-1000XM5",
+    "price": 5499000,
+    "image": "/images/prod09.jpg",
+    "description": "Wireless over-ear, noise cancelling. Often used as the reference point when people compare noise cancelling headphones. Comfortable for long stretches and easy to move between a laptop and a phone.",
+    "stock": 2
+  }
+]
