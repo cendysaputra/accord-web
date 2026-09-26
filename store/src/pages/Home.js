@@ -36,11 +36,17 @@ export default function Home() {
               </Link>
             </div>
           </div>
-
-          <div className="hero-media">
-            <img src="/images/hero.png" alt="" />
-          </div>
         </div>
+
+        <div className="hero-bars" aria-hidden="true">
+          {Array.from({ length: 240 }).map((_, i) => (
+            <span key={i} />
+          ))}
+        </div>
+      </div>
+
+      <div className="hero-media">
+        <img src="/images/hero-banner.png" alt="headphone-hero" />
       </div>
     </section>
   );
