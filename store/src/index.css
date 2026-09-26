@@ -31,6 +31,7 @@
   --space-lg: 48px;
   --space-xl: 96px;
   --space-2xl: 160px;
+  --space-3xl: 200px;
 
   /* Ukuran */
   --container: 1200px;
@@ -41,13 +42,15 @@
 @media (max-width: 1024px) {
   :root {
    /* Font Tablet */
-    --fs-hero: 64px;
+    --fs-hero: 48px;
     --fs-section: 52px;
     --fs-marquee: 52px;
     --fs-title: 40px;
     --fs-price-lg: 32px;
+    --fs-body: 14px;
     --space-2xl: 96px;
     --space-xl: 64px;
+    --gutter: 24px;
   }
 }
 
@@ -61,10 +64,10 @@
     --fs-price-lg: 26px;
     --fs-logo: 24px;
     --fs-card-name: 20px;
-    --fs-body: 15px;
-    --gutter: 20px;
+    --fs-body: 14px;
     --space-2xl: 64px;
     --space-xl: 48px;
+    --gutter: 16px;
   }
 }
 
