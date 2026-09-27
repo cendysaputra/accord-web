@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import axiosClient from "../api/axiosClient";
 import ProductCard from "../components/ProductCard";
@@ -11,11 +11,13 @@ export default function ProductDetail() {
   const [others, setOthers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [revealed, setRevealed] = useState(false);
+  const mediaRef = useRef(null);
 
   useEffect(() => {
     setLoading(true);
     setError("");
-    window.scrollTo(0, 0);
+    setRevealed(false);
 
     axiosClient
       .get(`/api/products/${id}`)
@@ -28,6 +30,28 @@ export default function ProductDetail() {
       .then((res) => setOthers(res.data.filter((p) => p._id !== id).slice(0, 3)))
       .catch(() => setOthers([]));
   }, [id]);
+
+  useEffect(() => {
+    if (loading || error) return;
+
+    const node = mediaRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setRevealed(true);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.25 }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, [loading, error, id]);
 
   if (error) {
     return (
@@ -47,11 +71,17 @@ export default function ProductDetail() {
       <section className="detail">
         <div className="detail-inner">
           <div className="detail-grid container">
-            <div className="detail-media">
+            <div
+              className={revealed ? "detail-media is-revealed" : "detail-media"}
+              ref={mediaRef}
+            >
               {loading ? (
                 <div className="detail-media-skeleton" />
               ) : (
-                <img src={product.image} alt={product.name} />
+                <>
+                  <img src={product.image} alt={product.name} />
+                  <span className="media-cover" aria-hidden="true" />
+                </>
               )}
             </div>
 
@@ -87,7 +117,6 @@ export default function ProductDetail() {
                         : "detail-stock detail-stock-out"
                     }
                   >
-                    <span className="stock-dot" />
                     {inStock
                       ? `In stock, ${product.stock} units available`
                       : "Out of stock"}

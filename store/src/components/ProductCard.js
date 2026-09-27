@@ -1,10 +1,32 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import formatPrice from "../formatPrice";
 import "./productCard.css";
 
 export default function ProductCard({ product }) {
   const navigate = useNavigate();
+  const thumbRef = useRef(null);
+  const [revealed, setRevealed] = useState(false);
+
+  useEffect(() => {
+    const node = thumbRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setRevealed(true);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.25 }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
 
   const openDetail = () => navigate(`/products/${product._id}`);
 
@@ -18,8 +40,12 @@ export default function ProductCard({ product }) {
       role="button"
       tabIndex={0}
     >
-      <div className="product-thumb">
+      <div
+        className={revealed ? "product-thumb is-revealed" : "product-thumb"}
+        ref={thumbRef}
+      >
         <img src={product.image} alt={product.name} />
+        <span className="thumb-cover" aria-hidden="true" />
       </div>
 
       <h3 className="product-name">{product.name}</h3>
@@ -29,8 +55,8 @@ export default function ProductCard({ product }) {
         <span className="product-price">{formatPrice(product.price)}</span>
         <svg
           className="product-arrow"
-          width="24"
-          height="24"
+          width="16"
+          height="16"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"

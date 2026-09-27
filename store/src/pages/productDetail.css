@@ -16,23 +16,84 @@
 }
 
 .detail-media {
+  position: relative;
   width: 32%;
   flex-shrink: 0;
   aspect-ratio: 1 / 1;
-  background: var(--color-bg);
   overflow: hidden;
+  background: #fffff00;
 }
 
 .detail-media img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  opacity: 0;
+  transform: translateY(100%);
 }
 
 .detail-media-skeleton {
   width: 100%;
   height: 100%;
-  background: var(--color-bg);
+  background: #fffff00;
+}
+
+/* tirai gelap yang menyapu dari bawah lalu keluar ke atas */
+.media-cover {
+  position: absolute;
+  inset: 0;
+  background: var(--color-text);
+  transform: translateY(100%);
+}
+
+.detail-media.is-revealed .media-cover {
+  animation: media-sweep 1.2s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+.detail-media.is-revealed img {
+  animation: media-rise 0.6s cubic-bezier(0.33, 1, 0.68, 1) 0.6s forwards;
+}
+
+@keyframes media-sweep {
+  0% {
+    transform: translateY(100%);
+  }
+  45% {
+    transform: translateY(0);
+  }
+  55% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes media-rise {
+  from {
+    opacity: 1;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .detail-media img {
+    opacity: 1;
+    transform: none;
+  }
+
+  .media-cover {
+    display: none;
+  }
+
+  .detail-media.is-revealed .media-cover,
+  .detail-media.is-revealed img {
+    animation: none;
+  }
 }
 
 .detail-info {
@@ -54,7 +115,7 @@
 }
 
 .breadcrumb a:hover {
-  color: var(--color-text);
+  color: var(--color-accent);
 }
 
 .breadcrumb-current {
