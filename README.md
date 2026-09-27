@@ -25,7 +25,7 @@ Tidak ada keranjang belanja, checkout, maupun halaman admin. Cakupannya sengaja 
 accord-web/
   docs/       logo Binus University Online dan screenshot dokumentasi
   store/      aplikasi React, jalan di port 3000
-  server/     REST API Express, jalan di port 5000
+  server/     REST API Express, jalan di port 5001
 ```
 
 ## Kebutuhan sebelum menjalankan
@@ -34,6 +34,10 @@ accord-web/
 - npm, cek dengan `npm -v`
 - MongoDB Community Server yang jalan secara lokal di port 27017
 - MongoDB Compass, opsional, untuk lihat isi database
+
+## Catatan soal port backend
+
+API dijalankan di port 5001, bukan 5000 seperti pada modul praktikum. Pada Windows 10 dan 11, port 5000 sering sudah dipakai layanan bawaan sistem, sehingga Express gagal mengikat port tersebut dan servernya berhenti tanpa pesan yang jelas. Kalau di komputer lain port 5000 kosong, nilai `PORT` di `.env` bisa diganti kembali ke 5000, dan `REACT_APP_API_URL` pada frontend ikut disesuaikan.
 
 ## Cara install dan menjalankan
 
@@ -50,7 +54,7 @@ Salin `.env.example` menjadi `.env`, lalu sesuaikan isinya.
 
 ```
 MONGODB_URI=mongodb://127.0.0.1:27017/spd_lab
-PORT=5000
+PORT=5001
 ```
 
 Isi database dengan data produk awal, lalu jalankan servernya.
@@ -62,7 +66,7 @@ npm run dev
 
 Perintah `npm run seed` hanya perlu dijalankan sekali. Tanpa langkah ini daftar produk akan kosong.
 
-API berjalan di `http://localhost:5000`.
+API berjalan di `http://localhost:5001`.
 
 ### 2. Frontend
 
@@ -71,6 +75,17 @@ Buka terminal baru, jangan tutup terminal backend.
 ```
 cd store
 npm install
+```
+
+Salin `.env.example` menjadi `.env`, isinya menunjuk ke alamat backend.
+
+```
+REACT_APP_API_URL=http://localhost:5001
+```
+
+Lalu jalankan.
+
+```
 npm start
 ```
 
