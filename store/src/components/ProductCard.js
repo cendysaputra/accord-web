@@ -29,8 +29,8 @@ export default function ProductCard({ product }) {
         <span className="product-price">{formatPrice(product.price)}</span>
         <svg
           className="product-arrow"
-          width="16"
-          height="16"
+          width="24"
+          height="24"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"

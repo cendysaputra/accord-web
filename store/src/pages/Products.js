@@ -20,7 +20,7 @@ export default function Products() {
     <>
       <section className="page-head">
         <div className="page-head-inner">
-          <div className="page-head-grid container">
+          <div className="container">
             <h1 className="page-title">
               Products<span className="dot">.</span>
             </h1>
@@ -30,14 +30,22 @@ export default function Products() {
 
       <section className="catalog">
         <div className="container">
-          {loading && <p className="state">Memuat produk...</p>}
-          {error && <p className="state">{error}</p>}
-
-          {!loading && !error && (
-            <div className="product-grid">
-              {products.map((product) => (
-                <ProductCard key={product._id} product={product} />
-              ))}
+          {error ? (
+            <p className="state">{error}</p>
+          ) : (
+            <div className="catalog-grid">
+              {loading
+                ? Array.from({ length: 9 }).map((_, i) => (
+                    <div className="card-skeleton" key={i}>
+                      <div className="skeleton-thumb" />
+                      <div className="skeleton-line skeleton-line-name" />
+                      <div className="skeleton-line skeleton-line-desc" />
+                      <div className="skeleton-line skeleton-line-price" />
+                    </div>
+                  ))
+                : products.map((product) => (
+                    <ProductCard key={product._id} product={product} />
+                  ))}
             </div>
           )}
         </div>

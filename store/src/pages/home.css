@@ -100,6 +100,65 @@
   }
 }
 
+/* Featured products */
+.featured {
+  padding: var(--space-2xl) 0;
+}
+
+.featured-head {
+  margin-bottom: var(--space-lg);
+}
+
+.featured-title {
+  font-size: var(--fs-section);
+  line-height: 1;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 24px;
+  row-gap: 80px;
+}
+
+.state {
+  color: var(--color-muted);
+  padding: var(--space-xl) 0;
+}
+
+/* Skeleton saat memuat */
+.card-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.skeleton-thumb {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: var(--color-surface);
+}
+
+.skeleton-line {
+  height: 12px;
+  background: var(--color-surface);
+  border-radius: 999px;
+}
+
+.skeleton-line-name {
+  height: 20px;
+  width: 60%;
+}
+
+.skeleton-line-desc {
+  width: 85%;
+}
+
+.skeleton-line-price {
+  width: 40%;
+  margin-bottom: var(--space-sm);
+}
+
 /* Tablet */
 @media (max-width: 1024px) {
   .hero-grid {
@@ -130,6 +189,11 @@
 
   .hero-bars span {
     width: 5px;
+  }
+
+  .featured-grid {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 56px;
   }
 }
 
@@ -174,5 +238,10 @@
 
   .hero-bars span {
     width: 4px;
+  }
+
+  .featured-grid {
+    grid-template-columns: 1fr;
+    row-gap: 56px;
   }
 }
