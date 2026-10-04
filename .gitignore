@@ -16,12 +16,6 @@ build/
 .env.test.local
 .env.production.local
 
-# catatan kerja, tidak ikut dikumpulkan
-AGENT.md
-PLANNING.md
-IMAGE-PROMPT.md
-.claude/
-
 # misc
 .DS_Store
 npm-debug.log*
