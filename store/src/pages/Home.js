@@ -62,7 +62,7 @@ export default function Home() {
 
         <div className="hero-media">
           <img
-            src="/images/hero-banner.png"
+            src="/images/hero-banner.webp"
             alt="headphone-hero"
             fetchpriority="high"
             decoding="async"
