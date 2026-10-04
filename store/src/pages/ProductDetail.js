@@ -79,7 +79,12 @@ export default function ProductDetail() {
                 <div className="detail-media-skeleton" />
               ) : (
                 <>
-                  <img src={product.image} alt={product.name} />
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    fetchpriority="high"
+                    decoding="async"
+                  />
                   <span className="media-cover" aria-hidden="true" />
                 </>
               )}

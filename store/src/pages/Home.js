@@ -61,7 +61,12 @@ export default function Home() {
         </div>
 
         <div className="hero-media">
-          <img src="/images/hero-banner.png" alt="headphone-hero" />
+          <img
+            src="/images/hero-banner.png"
+            alt="headphone-hero"
+            fetchpriority="high"
+            decoding="async"
+          />
         </div>
       </section>
 

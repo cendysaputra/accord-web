@@ -44,7 +44,12 @@ export default function ProductCard({ product }) {
         className={revealed ? "product-thumb is-revealed" : "product-thumb"}
         ref={thumbRef}
       >
-        <img src={product.image} alt={product.name} />
+        <img
+          src={product.image}
+          alt={product.name}
+          loading="lazy"
+          decoding="async"
+        />
         <span className="thumb-cover" aria-hidden="true" />
       </div>
 
