@@ -6,7 +6,11 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
+import ProtectedRoute from "./routes/ProtectedRoute";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -54,6 +58,16 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
           <Route path="/products/:id" element={<ProductDetail />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute>
+                <Profile />
+              </ProtectedRoute>
+            }
+          />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

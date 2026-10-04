@@ -1,0 +1,128 @@
+.auth {
+  padding: 16px;
+}
+
+.auth-inner {
+  padding-top: 180px;
+  padding-bottom: var(--space-2xl);
+  display: flex;
+  justify-content: center;
+}
+
+.auth-box {
+  width: 100%;
+  max-width: 420px;
+}
+
+.auth-title {
+  font-size: var(--fs-title);
+  margin-bottom: var(--space-xs);
+}
+
+.auth-lead {
+  color: var(--color-muted);
+  margin-bottom: var(--space-lg);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.auth-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.auth-field span {
+  font-size: var(--fs-small);
+  color: var(--color-muted);
+}
+
+.auth-field input {
+  font-family: inherit;
+  font-size: var(--fs-body);
+  color: var(--color-text);
+  padding: 12px 0;
+  border: 0;
+  border-bottom: 1px solid var(--color-line);
+  background: none;
+  outline: none;
+  transition: border-color 0.25s ease;
+}
+
+.auth-field input:focus {
+  border-bottom-color: var(--color-accent);
+}
+
+.auth-button {
+  margin-top: var(--space-sm);
+  padding: 14px 20px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--color-text);
+  color: var(--color-bg);
+  font-size: var(--fs-small);
+  transition: background 0.25s ease;
+}
+
+.auth-button:hover {
+  background: var(--color-accent);
+}
+
+.auth-button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.auth-msg {
+  margin-top: var(--space-md);
+  font-size: var(--fs-small);
+  color: #c62828;
+}
+
+.auth-foot {
+  margin-top: var(--space-lg);
+  font-size: var(--fs-small);
+  color: var(--color-muted);
+}
+
+.auth-foot a {
+  color: var(--color-accent);
+}
+
+.profile-list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--space-lg);
+}
+
+.profile-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.profile-row span {
+  font-size: var(--fs-small);
+  color: var(--color-muted);
+}
+
+.profile-row strong {
+  font-weight: 500;
+}
+
+@media (max-width: 640px) {
+  .auth {
+    padding: 8px;
+  }
+
+  .auth-inner {
+    padding-top: 120px;
+  }
+}

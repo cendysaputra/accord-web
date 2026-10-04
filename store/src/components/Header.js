@@ -5,8 +5,8 @@ import "./header.css";
 export default function Header() {
   const [open, setOpen] = useState(false);
   const location = useLocation();
+  const sudahLogin = Boolean(localStorage.getItem("token"));
 
-  // Close
   React.useEffect(() => {
     setOpen(false);
   }, [location.pathname]);
@@ -30,6 +30,11 @@ export default function Header() {
       <nav className={open ? "nav is-open" : "nav"}>
         <Link to="/">Home</Link>
         <Link to="/products">Products</Link>
+        {sudahLogin ? (
+          <Link to="/profile">Profile</Link>
+        ) : (
+          <Link to="/login">Login</Link>
+        )}
       </nav>
     </header>
   );

@@ -4,6 +4,7 @@ import morgan from "morgan";
 import mongoose from "mongoose";
 import config from "./config.js";
 import productRoutes from "./routes/product.routes.js";
+import userRoutes from "./routes/user.routes.js";
 import { notFound, errorHandler } from "./middlewares/error.middleware.js";
 
 const app = express();
@@ -17,6 +18,8 @@ app.get("/api/health", (req, res) => {
 });
 
 app.use("/api/products", productRoutes);
+app.use("/api/users", userRoutes);
+
 app.use(notFound);
 app.use(errorHandler);
 
